@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Я не лох?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="start-screen" class="screen active">
+            <h1 id="main-message">Ты лох!</h1>
+            <button id="start-button">Я не лох</button>
+        </div>
+
+        <div id="lootbox-offer-screen" class="screen">
+            <p>Хочешь доказать, что не лох? Купи Лутбокс!</p>
+            <p>Цена: 100 руб.</p>
+            <div class="button-group">
+                <button id="buy-lootbox-button">Купить Лутбокс за 100</button>
+                <button class="back-button" data-target="start-screen">Назад (Ты лох!)</button>
+            </div>
+        </div>
+
+        <div id="envelope-reveal-screen" class="screen">
+            <p>Из Лутбокса выпал...</p>
+            <div id="envelope-display" class="envelope">Конвертик</div>
+            <p id="envelope-rarity-text">Редкость: Обычный</p>
+            <p>Хочешь узнать, что внутри? Открой Конвертик!</p>
+            <p>Цена: 100 руб.</p>
+             <div class="button-group">
+                <button id="open-envelope-button">Открыть Конвертик за 100</button>
+                <button class="back-button" data-target="start-screen">Назад (Потерять конвертик)</button>
+             </div>
+        </div>
+
+         <div id="ticket-screen" class="screen">
+            <p>Внутри Конвертика оказался Лотерейный Билет!</p>
+            <div class="ticket-info">
+                <p>Выигрышная комбинация:</p>
+                <div id="winning-combination" class="ticket-numbers">------</div>
+                <p>Твой билет:</p>
+                <div id="player-ticket" class="ticket-numbers">------</div>
+            </div>
+            <p>Сыграем в лотерею?</p>
+            <p>Цена: 100 руб.</p>
+             <div class="button-group">
+                <button id="participate-lottery-button">Участвовать за 100</button>
+                <button class="back-button" data-target="start-screen">Назад (Сбежать)</button>
+             </div>
+         </div>
+
+         <div id="win-screen" class="screen">
+             <h1 id="win-message">Я НЕ ЛОХ!</h1>
+             <p>Поздравляем! Ты доказал это... потратив кучу денег.</p>
+         </div>
+
+    </div>
+
+    <div id="money-counter">Потрачено: 0 руб.</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

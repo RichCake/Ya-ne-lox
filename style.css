@@ -1,0 +1,153 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    color: #333;
+}
+
+.game-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 350px;
+    overflow: hidden; /* Предотвращает скачки при смене экранов */
+}
+
+.screen {
+    display: none; /* Скрыть все экраны по умолчанию */
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen.active {
+    display: flex; /* Показать активный экран */
+}
+
+h1 {
+    color: #d9534f; /* Красный цвет для "Ты лох!" */
+    margin-bottom: 20px;
+}
+
+#win-message {
+    color: #5cb85c; /* Зеленый цвет для "Я не лох!" */
+}
+
+p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+     transform: scale(0.98);
+}
+
+.back-button {
+    background-color: #6c757d;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Кнопки одна под другой */
+    gap: 10px; /* Пространство между кнопками */
+    align-items: center; /* Центрировать кнопки */
+}
+
+
+#money-counter {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.envelope {
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    min-width: 150px;
+}
+
+.envelope-white {
+    border: 2px solid #ccc;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.envelope-blue {
+    border: 2px solid #007bff;
+    background-color: #e7f3ff;
+    color: #0056b3;
+}
+
+.envelope-gold {
+    border: 2px solid #ffc107;
+    background-color: #fffbeb;
+    color: #b8860b;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+#envelope-rarity-text {
+    font-style: italic;
+    color: #555;
+}
+
+.ticket-info {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.ticket-numbers {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    letter-spacing: 5px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px dashed #aaa;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.ticket-numbers span {
+    display: inline-block;
+    min-width: 1ch; /* Минимальная ширина для символа */
+    text-align: center;
+}
+
+.ticket-numbers .hidden {
+    color: #ccc; /* Цвет скрытой цифры */
+}
