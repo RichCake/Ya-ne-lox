@@ -3,61 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Я не лох?</title>
+    <title>Я не лох!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
+    <div id="game-container">
+        <div id="money-counter">Потрачено: <span id="spent-amount">0</span> руб.</div>
+
+        <!-- Начальный Экран / Экран Проигрыша -->
         <div id="start-screen" class="screen active">
-            <h1 id="main-message">Ты лох!</h1>
-            <button id="start-button">Я не лох</button>
+            <h1 id="main-title">Ты лох!</h1>
+            <button id="not-a-loh-button">Я не лох</button>
         </div>
 
+        <!-- Экран Предложения Лутбокса -->
         <div id="lootbox-offer-screen" class="screen">
-            <p>Хочешь доказать, что не лох? Купи Лутбокс!</p>
-            <p>Цена: 100 руб.</p>
-            <div class="button-group">
-                <button id="buy-lootbox-button">Купить Лутбокс за 100</button>
-                <button class="back-button" data-target="start-screen">Назад (Ты лох!)</button>
-            </div>
+            <h2>Хочешь доказать?</h2>
+            <p>Купи "Лутбокс Надежды" всего за 100 руб.</p>
+            <p>Внутри может быть что-то ценное... а может и нет.</p>
+            <button id="buy-lootbox-button">Купить Лутбокс за 100</button>
+            <button id="back-to-start-1" class="back-button">Назад (Я передумал)</button>
         </div>
 
-        <div id="envelope-reveal-screen" class="screen">
-            <p>Из Лутбокса выпал...</p>
-            <div id="envelope-display" class="envelope">Конвертик</div>
-            <p id="envelope-rarity-text">Редкость: Обычный</p>
-            <p>Хочешь узнать, что внутри? Открой Конвертик!</p>
-            <p>Цена: 100 руб.</p>
-             <div class="button-group">
-                <button id="open-envelope-button">Открыть Конвертик за 100</button>
-                <button class="back-button" data-target="start-screen">Назад (Потерять конвертик)</button>
-             </div>
+        <!-- Экран Открытия Лутбокса (Анимация и результат) -->
+        <div id="lootbox-opening-screen" class="screen">
+            <h2>Открываем Лутбокс...</h2>
+            <div id="lootbox-animation"></div>
+            <p id="lootbox-result"></p>
+            <!-- Кнопка появится после "анимации" -->
+        </div>
+        
+        <!-- Экран Предложения Открыть Конвертик -->
+        <div id="envelope-offer-screen" class="screen">
+            <h2>У вас есть <span id="envelope-rarity-text"></span> Конвертик!</h2>
+            <div id="envelope-display">✉️</div>
+            <p>Чтобы узнать, что внутри, нужно его открыть.</p>
+            <p>Открытие конвертика: 100 руб.</p>
+            <button id="open-envelope-button">Открыть Конвертик за 100</button>
+            <button id="back-to-start-2" class="back-button">Назад (Потерять конвертик)</button>
         </div>
 
-         <div id="ticket-screen" class="screen">
-            <p>Внутри Конвертика оказался Лотерейный Билет!</p>
-            <div class="ticket-info">
-                <p>Выигрышная комбинация:</p>
-                <div id="winning-combination" class="ticket-numbers">------</div>
-                <p>Твой билет:</p>
-                <div id="player-ticket" class="ticket-numbers">------</div>
-            </div>
-            <p>Сыграем в лотерею?</p>
-            <p>Цена: 100 руб.</p>
-             <div class="button-group">
-                <button id="participate-lottery-button">Участвовать за 100</button>
-                <button class="back-button" data-target="start-screen">Назад (Сбежать)</button>
-             </div>
-         </div>
-
-         <div id="win-screen" class="screen">
-             <h1 id="win-message">Я НЕ ЛОХ!</h1>
-             <p>Поздравляем! Ты доказал это... потратив кучу денег.</p>
-         </div>
+        <!-- Экран Лотерейного Билета и Предложения Участвовать -->
+        <div id="lottery-ticket-screen" class="screen">
+            <h2>Вот ваш Лотерейный Билет!</h2>
+            <p>Выигрышная комбинация: <strong id="winning-combination-display">XXXXXX</strong></p>
+            <p>Ваш билет: <strong id="player-ticket-display">??????</strong></p>
+            <p id="lottery-evaluation-text">Кажется, у вас неплохие шансы... или нет?</p>
+            <p>Участие в лотерее: 100 руб.</p>
+            <button id="participate-lottery-button">Участвовать в Лотерее за 100</button>
+            <button id="back-to-start-3" class="back-button">Назад (Сбросить билет)</button>
+        </div>
+        
+        <!-- Экран Розыгрыша Лотереи (Результат) -->
+        <div id="lottery-result-screen" class="screen">
+            <h2>Результаты розыгрыша:</h2>
+            <p>Выигрышная комбинация: <strong id="final-winning-combination"></strong></p>
+            <p>Ваш билет: <strong id="final-player-ticket"></strong></p>
+            <p id="lottery-outcome-message"></p>
+            <button id="to-main-screen-button">ОК</button>
+        </div>
 
     </div>
-
-    <div id="money-counter">Потрачено: 0 руб.</div>
 
     <script src="script.js"></script>
 </body>
